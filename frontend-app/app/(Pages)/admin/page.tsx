@@ -15,7 +15,7 @@ import DeleteAdminForm from "@/app/components/admin/DeleteProduct/DeleteProductF
 export default function Admin() {
     const [isAdmin, setIsAdmin] = useState(false);
     const [products, setProducts] = useState<ProductInterface[]>([]);
-    const [apiUrl, setApiUrl] = useState('http://localhost:4000/api/products/wantedProducts');
+    const [apiUrl, setApiUrl] = useState('https://abda-e-commerce-backend.onrender.com/api/products/wantedProducts');
     const [sectionName, setSectionName] = useState('Most Wanted Products');
 
     
@@ -42,7 +42,7 @@ export default function Admin() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch('http://localhost:4000/api/user/getUser', {
+                const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/user/getUser', {
                     credentials: "include",
                 });
 
@@ -76,7 +76,7 @@ export default function Admin() {
                 query.append(key, String(value));
             }
         });
-        const url = `http://localhost:4000/api/products/filter?${query.toString()}`
+        const url = `https://abda-e-commerce-backend.onrender.com/api/products/filter?${query.toString()}`
         console.log(url)
         const response = await fetch(url);
         if (response.ok) {
@@ -119,9 +119,9 @@ export default function Admin() {
     
   const handleCategoryChange = (category: string) => {
     const apiUrlMap = {
-      'men': 'http://localhost:4000/api/products/men',
-      'women': 'http://localhost:4000/api/products/women',
-      'wantedProducts': 'http://localhost:4000/api/products/wantedProducts'
+      'men': 'https://abda-e-commerce-backend.onrender.com/api/products/men',
+      'women': 'https://abda-e-commerce-backend.onrender.com/api/products/women',
+      'wantedProducts': 'https://abda-e-commerce-backend.onrender.com/api/products/wantedProducts'
     };
 
     const sectionNameMap = {

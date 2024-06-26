@@ -139,7 +139,7 @@ const EditAdminForm: React.FC<EditAdminFormProps> = ({ onProductsChange, onSubmi
 
     try {
       setLoader(true)
-      const response = await fetch('http://localhost:4000/api/admin/product/update', {
+      const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/admin/product/update', {
         method: 'PUT',
         body: formData,
       });

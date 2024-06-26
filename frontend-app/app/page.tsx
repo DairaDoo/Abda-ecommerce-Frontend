@@ -8,14 +8,14 @@ export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
-  const [apiUrl, setApiUrl] = useState('http://localhost:4000/api/products/wantedProducts');
+  const [apiUrl, setApiUrl] = useState('https://abda-e-commerce-backend.onrender.com/api/products/wantedProducts');
   const [sectionName, setSectionName] = useState('Most Wanted Products');
   const [cartItemCount, setCartItemCount] = useState<number>(0);
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/user/getUser', {
+        const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/user/getUser', {
           credentials: "include",
         });
         if (response.ok) {
@@ -37,9 +37,9 @@ export default function Home() {
 
   const handleCategoryChange = (category: string) => {
     const apiUrlMap = {
-      'men': 'http://localhost:4000/api/products/men',
-      'women': 'http://localhost:4000/api/products/women',
-      'wantedProducts': 'http://localhost:4000/api/products/wantedProducts'
+      'men': 'https://abda-e-commerce-backend.onrender.com/api/products/men',
+      'women': 'https://abda-e-commerce-backend.onrender.com/api/products/women',
+      'wantedProducts': 'https://abda-e-commerce-backend.onrender.com/api/products/wantedProducts'
     };
 
     const sectionNameMap = {
@@ -60,7 +60,7 @@ export default function Home() {
 
   const fetchCartItemCount = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/cart/itemCount', {
+      const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/cart/itemCount', {
         method: 'GET',
         credentials: 'include', // Incluye las credenciales en la solicitud
       });

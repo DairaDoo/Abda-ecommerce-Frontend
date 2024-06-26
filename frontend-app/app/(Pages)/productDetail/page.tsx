@@ -12,14 +12,14 @@ interface productDetailProps {
 const ProductDetailPage: React.FC<productDetailProps> = ({ fetchCartItemCount }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [apiUrl, setApiUrl] = useState('http://localhost:4000/api/products/wantedProducts');
+  const [apiUrl, setApiUrl] = useState('https://abda-e-commerce-backend.onrender.com/api/products/wantedProducts');
   const [sectionName, setSectionName] = useState('Most Wanted Products');
 
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch("http://localhost:4000/api/user/getUser", {
+        const response = await fetch("https://abda-e-commerce-backend.onrender.com/api/user/getUser", {
           credentials: "include",
         });
         if (response.ok) {
@@ -42,7 +42,7 @@ const ProductDetailPage: React.FC<productDetailProps> = ({ fetchCartItemCount })
   
 
   const handleCategoryChange = (category: string) => {
-    setApiUrl(`http://localhost:4000/api/products/${category}`);
+    setApiUrl(`https://abda-e-commerce-backend.onrender.com/api/products/${category}`);
     setSectionName(category === 'men' ? 'Men\'s Collection' : 'Women\'s Collection');
   };
 

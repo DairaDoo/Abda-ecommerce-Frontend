@@ -43,7 +43,7 @@ const DeleteAdminForm: React.FC<EditAdminFormProps> = ({
   const deleteSpecificColor = async () => {
     try {
       setLoader(true)
-      const response = await fetch('http://localhost:4000/api/admin/product/delete/color', {
+      const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/admin/product/delete/color', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ general_product_id: product?.general_product_id, color_id: colorId })
@@ -65,7 +65,7 @@ const DeleteAdminForm: React.FC<EditAdminFormProps> = ({
   const deleteGeneralProduct = async () => {
     try {
       setLoader(true)
-      const response = await fetch('http://localhost:4000/api/admin/product/delete/generalProduct', {
+      const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/admin/product/delete/generalProduct', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ general_product_id: product?.general_product_id }) 

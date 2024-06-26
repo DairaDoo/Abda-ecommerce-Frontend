@@ -19,7 +19,7 @@ export default function Search() {
 
         (async () => {
             try {
-                const response = await fetch('http://localhost:4000/api/user/getUser', {
+                const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/user/getUser', {
                     credentials: "include",
                 });
                 if (response.ok) {
@@ -37,7 +37,7 @@ export default function Search() {
             }
 
             if (queryParam) {
-                const searchResponse = await fetch(`http://localhost:4000/api/search?query=${queryParam}`);
+                const searchResponse = await fetch(`https://abda-e-commerce-backend.onrender.com/api/search?query=${queryParam}`);
                 const data = await searchResponse.json();
                 setProducts(data);
             }

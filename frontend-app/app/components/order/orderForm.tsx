@@ -26,7 +26,7 @@ function OrderForm() {
     setLoading(true)
     event?.preventDefault();
     try {
-      const response = await fetch("http://localhost:4000/api/order/orderConfirmation", {
+      const response = await fetch("https://abda-e-commerce-backend.onrender.com/api/order/orderConfirmation", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -47,7 +47,7 @@ function OrderForm() {
   };
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/cart/getCartInfo', {
+    fetch('https://abda-e-commerce-backend.onrender.com/api/cart/getCartInfo', {
       method: 'GET',
       credentials: "include",
       headers: {

@@ -12,7 +12,7 @@ export default function Admin() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
 
-    const [apiUrl, setApiUrl] = useState('http://localhost:4000/api/products/getAllProducts');
+    const [apiUrl, setApiUrl] = useState('https://abda-e-commerce-backend.onrender.com/api/products/getAllProducts');
     const [sectionName, setSectionName] = useState('Most Wanted Products');
 
 
@@ -21,7 +21,7 @@ export default function Admin() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch('http://localhost:4000/api/user/getUser', {
+                const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/user/getUser', {
                     credentials: "include",
                 });
                 if (response.ok) {
@@ -45,14 +45,14 @@ export default function Admin() {
     }, []);
 
     const handleCategoryChange = (category: string) => {
-        setApiUrl(`http://localhost:4000/api/products/${category}`);
+        setApiUrl(`https://abda-e-commerce-backend.onrender.com/api/products/${category}`);
         setSectionName(category === 'men' ? 'Men\'s Collection' : 'Women\'s Collection');
     };
 
     const handleLogout = async () => {
         try {
             // Make a request to the backend logout endpoint
-            const response = await fetch('http://localhost:4000/api/user/logout', {
+            const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/user/logout', {
                 method: 'POST',
                 credentials: 'include',
             });

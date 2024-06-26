@@ -22,7 +22,7 @@ export default function Cart({fetchCartItemCount}: CartProps) {
 
     useEffect(() => {
         // Carga los elementos del carrito desde tu API
-        fetch('http://localhost:4000/api/cart/getCartInfo', {
+        fetch('https://abda-e-commerce-backend.onrender.com/api/cart/getCartInfo', {
             method: 'GET',
             credentials: "include",
             headers: {
@@ -42,7 +42,7 @@ export default function Cart({fetchCartItemCount}: CartProps) {
 
     const handleRemoveItem = (productId: number) => {
         setLoading(true)
-        fetch('http://localhost:4000/api/cart/deleteCartItem', {
+        fetch('https://abda-e-commerce-backend.onrender.com/api/cart/deleteCartItem', {
             method: 'POST',
             credentials: "include",
             headers: {

@@ -13,7 +13,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children, isAdmin, onCategoryCh
 
   const fetchCartItemCount = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/cart/itemCount', {
+      const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/cart/itemCount', {
         method: 'GET',
         credentials: 'include',
       });

@@ -26,7 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, fetchCartItemCount})
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch('http://localhost:4000/api/user/getUser', {
+                const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/user/getUser', {
                     credentials: "include",
                 });
                 if (response.ok) {
@@ -72,7 +72,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, fetchCartItemCount})
 
     const handleViewDetails = async () => {
         try {
-            const response = await fetch('http://localhost:4000/api/products/addCountMostWanted', {
+            const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/products/addCountMostWanted', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, fetchCartItemCount})
             setShowLoginModal(true);
         } else {
             try {
-                const response = await fetch('http://localhost:4000/api/cart/addToCart', {
+                const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/cart/addToCart', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

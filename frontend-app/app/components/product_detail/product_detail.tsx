@@ -49,7 +49,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ isLoggedIn, isAdmin, fetc
       }
 
       try {
-        const response = await fetch("http://localhost:4000/api/products/getProductById", {
+        const response = await fetch("https://abda-e-commerce-backend.onrender.com/api/products/getProductById", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ productVariantId }),
@@ -102,7 +102,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ isLoggedIn, isAdmin, fetc
     }
     try {
       setLoading(true)
-      const response = await fetch("http://localhost:4000/api/cart/addToCart", {
+      const response = await fetch("https://abda-e-commerce-backend.onrender.com/api/cart/addToCart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

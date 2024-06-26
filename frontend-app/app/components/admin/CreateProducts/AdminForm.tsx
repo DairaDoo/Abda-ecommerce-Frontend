@@ -60,7 +60,7 @@ const AdminForm: React.FC<AdminFormProps>= ({ onProductsChange, onSubmitSuccess,
 
     try {
       setLoader(true)
-      const response = await fetch('http://localhost:4000/api/admin/product/create', {
+      const response = await fetch('https://abda-e-commerce-backend.onrender.com/api/admin/product/create', {
         method: 'POST',
         body: formData,
 

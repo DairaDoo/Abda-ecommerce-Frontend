@@ -28,7 +28,7 @@ function RegisterForm() {
     event?.preventDefault(); // Prevenir el comportamiento por defecto del evento
     const { confirmPassword, ...FormData } = data; // Extracción de la confirmación de la contraseña de los datos
     try {
-      const response = await fetch("http://localhost:4000/api/user/register", {
+      const response = await fetch("https://abda-e-commerce-backend.onrender.com/api/user/register", {
         // Envío de la data mediante una solicitud HTTP
         method: "POST",
         headers: {
